@@ -1,0 +1,13 @@
+{
+    "port": 3000,
+    "minDeliveryTime": 3600000,
+    "discount": 20,
+    "glovo": {
+        "url": "api.glovoapp.com",
+        "key": "159351658320183",
+        "secret": "34d9fb1024024ce2a3fdd9a4d96f196f"
+    },
+    "maps": {
+        "url":"nominatim.openstreetmap.org"
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "afterglovo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "node ./tests"
+  },
+  "keywords": [
+    "glovo",
+    "after"
+  ],
+  "author": "PavlezT",
+  "license": "ISC",
+  "dependencies": {}
+}
