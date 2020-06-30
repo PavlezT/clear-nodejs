@@ -1,5 +1,7 @@
+const fs = require('fs')
+
 module.exports = (router) => {
     router.get('/', (req, res) => {
-        res.end('hello')// front-end parts could be hosted from this part
+        fs.createReadStream('public/index.html', {encoding: 'utf8'}).pipe(res);
     })
 }

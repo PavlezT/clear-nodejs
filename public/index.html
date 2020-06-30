@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function sendData() {
+                let form = document.forms[0];
+                let xhr = new XMLHttpRequest();
+                xhr.open(form.method, form.action, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        document.getElementById('response').innerHTML = xhr.response;
+                    }
+                }
+                let j = {
+                    "from": form[0].value,
+                    "to": form[1].value,
+                };
+                xhr.send(JSON.stringify(j));
+            }
+        </script>
+    </head>
+    <body>
+        <h1>AfterGlovo estimate page</h1>
+        <form method="POST" action="orders/estimate">
+            <label>From:</label>
+            <input name="from" type="text" />
+            <br>
+            <label>To:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input name="to" type="text" />
+            <br>
+            <br>
+            <input type="button" value="Отправить" onclick="sendData()"/>
+        </form>
+        <pre id="response" ></pre>
+    </body>
+</html>

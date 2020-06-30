@@ -16,7 +16,7 @@ require('./static')(router);
 module.exports = async (req, res) => {
     const key = `${req.method}:${req.url}`; // TODO: should work with RegExp like GET:/some/url/*
     if (router.routes.has(key)) {
-        if(req.headers['content-type'] === 'application/json') {
+        if(req.headers['content-type'] && req.headers['content-type'].includes('application/json')) {
             await parseBody(req);
         }
 
