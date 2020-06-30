@@ -11,10 +11,25 @@ describe('Start integration tests', () => {
             to: 'Velyka‌ Vasylkivska‌ Street‌ 22,‌ Kiev,‌ Kyiv‌ city'
         };
         const result = await makeRequest(hostname, url, 'POST', data, {}, true);
-        console.log('result:', result);
+
+        expect(result).have('amount');
+        expect(result.amount).greatThen(0);
     })
 
-    it('Should return 400 for incorrect positions', () => {
-        // expect(result).equil(80);
+    it('Should return 400 for incorrect positions', async () => {
+        const data = {
+            from: 'Not_real_address',
+            to: 'Velyka‌ Vasylkivska‌ Street‌ 22,‌ Kiev,‌ Kyiv‌ city'
+        };
+        let result
+        
+        try {
+            await makeRequest(hostname, url, 'POST', data, {}, true);
+            result = false;
+        } catch(e) {
+            result = true;
+        }
+
+        expect(result).equil(true);
     })
 })

@@ -11,7 +11,7 @@ module.exports = (hostname, endpoint, method = 'GET', data = {}, extraHeaders = 
         path: endpoint,
         headers: {
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36',
             ...extraHeaders,
         },
         ...(hostname.split(':')[1] && {port: hostname.split(':')[1]})

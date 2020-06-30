@@ -20,7 +20,17 @@ global.expect = (data) => {
             if (data !== compareTo){
                 throw `${data} is expected to be equil to ${compareTo}`;
             }
-        }
+        },
+        have: (field) => {
+            if (!data.hasOwnProperty(field)){
+                throw `${data} is expected to have property ${field}`;
+            }
+        },
+        greatThen: (number) => {
+            if (data <= number){
+                throw `${data} is expected to greater then ${number}`;
+            }
+        },
     }
 }
 
