@@ -16,7 +16,7 @@ describe('Start integration tests', () => {
         expect(result.amount).greatThen(0);
     })
 
-    it('Should return 400 for incorrect positions', async () => {
+    it('Should return error for incorrect positions', async () => {
         const data = {
             from: 'Not_real_address',
             to: 'Velyka‌ Vasylkivska‌ Street‌ 22,‌ Kiev,‌ Kyiv‌ city'

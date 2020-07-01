@@ -8,4 +8,4 @@ require('./integration');
 
 setTimeout(() => run(), 1500);
 
-setTimeout(() => server.kill(), 4000);
+setTimeout(() => server.kill(), 10000);

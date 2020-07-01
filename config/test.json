@@ -1,6 +1,6 @@
 {
     "port": 3003,
-    "minDeliveryTime": 3600000,
+    "minDeliveryTime": 1200000,
     "discount": 20,
     "glovo": {
         "url": "api.glovoapp.com",
